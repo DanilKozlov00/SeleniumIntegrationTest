@@ -27,3 +27,6 @@ cache:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 
+env:
+  global:
+  - CODECOV_TOKEN="429f7dbf-9c98-41aa-87d3-8c14e0e07703"
