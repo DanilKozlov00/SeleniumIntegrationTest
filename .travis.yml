@@ -4,6 +4,9 @@ jdk:
   - oraclejdk11
 sudo: required
 dist: trusty
+branches:
+  only:
+  - Test
 addons: # get google-chrome-stable
   chrome: stable
 before_script:
