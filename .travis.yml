@@ -1,0 +1,28 @@
+# Languages https://docs.travis-ci.com/user/languages/java/
+language: java
+jdk:
+  - oraclejdk11
+sudo: required
+dist: trusty
+addons: # get google-chrome-stable
+  chrome: stable
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3 
+install: 
+    - wget -N http://chromedriver.storage.googleapis.com/2.43/chromedriver_linux64.zip -P ~/
+    - unzip ~/chromedriver_linux64.zip -d ~/
+    - rm ~/chromedriver_linux64.zip
+    - sudo mv -f ~/chromedriver /usr/local/share/
+    - sudo chmod +x /usr/local/share/chromedriver
+
+# Improve Build Speed https://dzone.com/articles/travis-ci-tutorial-java-projects
+cache:
+  directories:
+  - $HOME/.m2
+
+# Codecov https://github.com/codecov/example-java
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
