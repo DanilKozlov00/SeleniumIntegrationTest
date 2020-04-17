@@ -1,42 +1,34 @@
-# Languages https://docs.travis-ci.com/user/languages/java/
 language: java
 jdk:
-  - oraclejdk11
-
+- oraclejdk11
 sudo: required
 dist: trusty
-
-addons: # get google-chrome-stable
+addons:
   chrome: stable
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 
-
-install: 
-    - wget -N http://chromedriver.storage.googleapis.com/2.43/chromedriver_linux64.zip -P ~/
-    - unzip ~/chromedriver_linux64.zip -d ~/
-    - rm ~/chromedriver_linux64.zip
-    - sudo mv -f ~/chromedriver /usr/local/share/
-    - sudo chmod +x /usr/local/share/chromedriver
-
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+install:
+- wget -N http://chromedriver.storage.googleapis.com/2.43/chromedriver_linux64.zip
+  -P ~/
+- unzip ~/chromedriver_linux64.zip -d ~/
+- rm ~/chromedriver_linux64.zip
+- sudo mv -f ~/chromedriver /usr/local/share/
+- sudo chmod +x /usr/local/share/chromedriver
 deploy:
   provider: releases
-  api_key: 961dfbd97b4a186495dd8decd9c91a2230104fdb
-  file: "src"
+  api_key:
+    secure: e9dVfUUXbJ2ZiYTCnAvWXrRI3ITI0aFrnIg9CqdoYExZ7hySPCQmUUeekQoVd/3miJNdXHOctUoECEAMj9gsGLTSnJSb17xIH8f/eoK3wPQoygbeia2T5JoI0FXglAZwhoh0rN8IbmzHS5cxw7ANhin3DzzpjElfZQnikqFd1S/ce93dNs3+nTorbjbzH6gcmMpMeLUeGHSUyxYm6RGv3/fT/Bi9capqwyUP8tRx6f0pKMrz8CNIsXHy8fki1frHVG+RJuoDrKJ/PftWKnPRgDjfkEpwVcUfQnNBIPaUp8KoxLAZaEhzsL5YKfFnQeS8fpHjVSFJg77iaPvys7hlmdOJfY5eZ/BCK/PbGWTKl7QI0ZM99wNu8fZ27MynQQvYXrSsSM5k5E52avbEYCcQ5MNMhxx3sqxv4UeU4SrFVKdfw5H/Y2iiUpZ9j3OKCNP5kuMQJ1kXQMQTWDiDiRZhxNJxCuKSSGBRDR7lCJEohTKkwiN9b6FYG0Qt1khtlxpwpJjqeCZy4luSNm1fd0AYbhYtwFYTer4NCusS+hRbl5HGWi7oD7fbhC9nWW3pa7AdpkCFizs1FbdWkkTqKJSrspEPjG9YXHfiC3iLbvkcdaEDQZ17efGpcANzbd8tIyqYKDnD3qcMQlyV2owfARDcHFHfx12J0eqJZF8a8DjjBrA=
+  file: src
   skip_cleanup: true
   on:
     tags: false
-
-# Improve Build Speed https://dzone.com/articles/travis-ci-tutorial-java-projects
 cache:
   directories:
-  - $HOME/.m2
-
-# Codecov https://github.com/codecov/example-java
+  - "$HOME/.m2"
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-
+- bash <(curl -s https://codecov.io/bash)
 env:
   global:
   - CODECOV_TOKEN="429f7dbf-9c98-41aa-87d3-8c14e0e07703"
