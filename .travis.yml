@@ -20,6 +20,7 @@ install:
     - sudo mv -f ~/chromedriver /usr/local/share/
     - sudo chmod +x /usr/local/share/chromedriver
 
+
 deploy:
   provider: releases
   api_key: "b9af1a0fd685913c20228b40c08104d0dc7175ab"
