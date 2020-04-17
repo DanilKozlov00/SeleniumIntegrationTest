@@ -6,7 +6,7 @@ sudo: required
 dist: trusty
 addons: # get google-chrome-stable
   chrome: stable
-script: -"mvn clean compile"
+script: mvn clean compile
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
