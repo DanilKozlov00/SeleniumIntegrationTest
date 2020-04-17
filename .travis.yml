@@ -2,6 +2,16 @@
 language: java
 jdk:
   - oraclejdk11
+deploy:
+  provider: releases
+  prerelease:true
+  name: v.0.0.1
+  api_key:
+    secure: 961dfbd97b4a186495dd8decd9c91a2230104fdb
+  file: src/*
+  skip_cleanup: true
+   on:
+    branch: master
 sudo: required
 dist: trusty
 addons: # get google-chrome-stable
