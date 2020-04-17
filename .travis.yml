@@ -22,7 +22,8 @@ install:
 
 deploy:
   provider: releases
-  api_key: 961dfbd97b4a186495dd8decd9c91a2230104fdb
+  email: danilkozlov000@gmail.com
+  password: pizdecaneparol22
   file: src/*
   skip_cleanup: true
   on:
