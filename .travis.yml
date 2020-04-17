@@ -22,7 +22,7 @@ install:
 
 deploy:
   provider: releases
-  api_key: "961dfbd97b4a186495dd8decd9c91a2230104fdb"
+  api_key: 961dfbd97b4a186495dd8decd9c91a2230104fdb
   file: "src"
   skip_cleanup: true
   on:
