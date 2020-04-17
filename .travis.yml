@@ -31,13 +31,3 @@ after_success:
 env:
   global:
   - CODECOV_TOKEN="429f7dbf-9c98-41aa-87d3-8c14e0e07703"
-
-deploy:
-  provider: releases
-  prerelease:true
-  name: v.0.0.1
-  api_key:
-    secure: 961dfbd97b4a186495dd8decd9c91a2230104fdb
-  file: src/*
-  skip_cleanup: true
- 
