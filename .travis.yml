@@ -2,17 +2,19 @@
 language: java
 jdk:
   - oraclejdk11
+deploy:
+              - provider: npm
+                api_key:
+                    secure: gf1vo90vMaUC7DDwQbbCOw
+                tag: next
+                skip_cleanup: true
+                on:
+                    branch: Test
+                    repo: DanilKozlov00/SeleniumIntegrationTest
 sudo: required
 dist: trusty
 addons: # get google-chrome-stable
   chrome: stable
-deploy:
-  provider: releases
-  api_key:bdaa95a0747158436623af8fb42be6cb2b4c2716
-  skip_cleanup: true
-  on:
-    tags: true
-  branches: Test
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
