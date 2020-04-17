@@ -9,7 +9,6 @@ addons: # get google-chrome-stable
 deploy:
   provider: releases
   api_key:bdaa95a0747158436623af8fb42be6cb2b4c2716
-  
   skip_cleanup: true
   on:
     tags: true
