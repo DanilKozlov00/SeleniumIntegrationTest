@@ -2,15 +2,6 @@
 language: java
 jdk:
   - oraclejdk11
-deploy:
-              - provider: npm
-                api_key:
-                    secure: gf1vo90vMaUC7DDwQbbCOw
-                tag: next
-                skip_cleanup: true
-                on:
-                    branch: Test
-                    repo: DanilKozlov00/SeleniumIntegrationTest
 sudo: required
 dist: trusty
 addons: # get google-chrome-stable
