@@ -341,7 +341,6 @@ public class Selenium {
                             Var_issue = pull_String("//div[1]/div/article[1]/div/div/div/a", false);
                             Change_Tab(0);
                             Good_issue = pull_String("//div[1]/div/article[1]/div/div/div/a", false);
-                            Change_Tab(1);
                             if (!Good_issue.equals(Var_issue)) {
                                 str += "Доска " + pull_String("//div[1]/" + name_path, false) + " не содержит задачи: " + Good_issue + "\n";
                             }
@@ -354,10 +353,10 @@ public class Selenium {
 
                     if (driver.findElements(By.xpath("//div[2]/div[1]/div/span")).size() != 0) {
                         if (pull_INT("//div[2]/" + count_path) >= 1) {
+                            Change_Tab(1);
                             Var_issue = pull_String("//div[2]/div/article[1]/div/div/div/a", false);
                             Change_Tab(0);
                             Good_issue = pull_String("//div[2]/div/article[1]/div/div/div/a", false);
-                            Change_Tab(1);
                             if (!Good_issue.equals(Var_issue)) {
                                 str += "Доска " + pull_String("//div[2]/" + name_path, false) + " не содержит задачи: " + Good_issue + "\n";
                             }
@@ -370,10 +369,10 @@ public class Selenium {
 
                     if (driver.findElements(By.xpath("//div[3]/div[1]/div/span")).size() != 0) {
                         if (pull_INT("//div[3]/" + count_path) >= 1) {
+                            Change_Tab(1);
                             Var_issue = pull_String("//div[3]/div/article[1]/div/div/div/a", false);
                             Change_Tab(0);
                             Good_issue = pull_String("//div[3]/div/article[1]/div/div/div/a", false);
-                            Change_Tab(1);
                             if (!Good_issue.equals(Var_issue)) {
                                 str += "Доска " + pull_String("//div[3]/" + name_path, false) + " не содержит задачи: " + Good_issue + "\n";
                             }
