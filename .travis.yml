@@ -28,3 +28,5 @@ deploy:
   file: pom.xml
   on:
     repo: DanilKozlov00/SeleniumIntegrationTest
+
+
