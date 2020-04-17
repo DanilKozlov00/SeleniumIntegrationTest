@@ -5,7 +5,6 @@ jdk:
 
 sudo: required
 dist: trusty
-script:echo -n b9af1a0fd685913c20228b40c08104d0dc7175ab | openssl pkeyutl -encrypt -inkey
 
 addons: # get google-chrome-stable
   chrome: stable
