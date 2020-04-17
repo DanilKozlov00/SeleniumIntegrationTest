@@ -22,10 +22,9 @@ cache:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 deploy:
-     provider: releases
-     api_key:
-          secure: TYnJlOZP+ta+y9rrVAegOoy/tdAfyBtOH1NdJfyT3xR7YnyUKEWmtA5F219HZevI2VuCkf7GPoDI4HLMso9aSK1HFXk6hYCylrDjIOTe0o4E0d5oCYS3PdzA4YEBqLaCliqL1xeXkeTap1r/K2qyWDq14CsOsvtPKOStXqS6qmxuc7qXKyBP5Ev3wuEugs2RxsSNC33VvcBjX/9V0MOOkMfNBcUEC9c2jx4TJr85BPPQ29IQTcRSyHOAqDK3KQfuZTnWaLS1RD7CdWeuHbPY5yuU/PsIanZ3g6cWInLoVdoIvC3SUbKwVeMjId9/UWw4KxWrPaCYFLfIByiDNcYSmZYQX04W2fSCLzwTtAS8wVu3PtfG+qlBLdxHdhlDsXF2FDouOm2csM3qovd54rLARZtbi2xuVsyHR7w5KyOMkvyknowiyJ3i6tdlIv/Yv1BIf4z3FqvaoIkl7xpqwgFQXG+hLn+ZPXR/yQmugqbffvrcijypgXNnvmROqRJcm3YeyW17Gv8r98at+6gkOnFTIaUyDOncLV/v1U+rhasWY3/zmDIPZHSMF4G05mCpxiwCExKL+YANCqpth8jkZO8fA/1HeLisXHtL3Gr86SSYYPV0JlIfZvQWEKCIEMkf9UcHfvytzwQXB8t5hRcsriCb8qFT/EJD5QzcGVadcz3vsa4=
-     file: src/*
-     skip_cleanup: true 
-     on:
-      repo: DanilKozlov00/SeleniumIntegrationTest
+  provider: releases
+  api_key:
+    secure: UjgtRluvM2zzBx3FX+Iejj2lq+beaPDOuKLuuB720PuuUOhG4bZkkUyx4Ddbs0N0qLQV49i5Loc5yRaXjToNSAmya35La1JqcqmR5aGuOHD+YDfIrI/7D93UQuBK6ANCEw5e/RKf0naY6yf/MFbmGXSayjJ0inXq8ncIHoPpg6MJDsJoYTQ0TDg8LgddPwUI0Dbxu+9x8pZlieNXEYg1/xS+sTwzoQvo5PURldC+cwDIuweS/4HUKK8wJQB0TDOsis66HsNpHX0okG7JEXkLtiMLSzJRmfxutVPjWj8pVJ4uJuXo5IxmxHSUxI47SfG0KkcU2+MMn1WNYVOkD7jQpZnvS+t6YPYrosh6y7WG4DtijAaxazEZJSC3PxWH26S7usf3k5NihLOjP+appyiXAyJmg3TuPM6wwzhnzFOsYnbICvNWjy3WAlV1wAxRehu+5NwF8LG39lZ/+c8uj/x3duUavYrVA7AP0fuOCF7Fu0l4MpKTz554n6hk30r+7KBmEidoY6786pR/TBp8I41lr3kRHf4ON2HI5fwho87bJDb/zT358S8m3F2lzgbWTrK+mEeeBM4EPLmXLJOwqWPY5vb5Gnnwxpba3BSdgUfC6jKgZhtnGNtLPDmvpfTpjL93DQH9w6k1dgosWlAXr1B5C/cQ5F7XlYoh3KGYxEDyeNU=
+  file: pom.xml
+  on:
+    repo: DanilKozlov00/SeleniumIntegrationTest
