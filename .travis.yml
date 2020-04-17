@@ -22,8 +22,7 @@ install:
 
 deploy:
   provider: releases
-  email: "danilkozlov000@gmail.com"
-  password: "pizdecaneparol22"
+  api_key: "b9af1a0fd685913c20228b40c08104d0dc7175ab"
   file: src/*
   skip_cleanup: true
   on:
