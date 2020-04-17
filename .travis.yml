@@ -23,7 +23,7 @@ install:
 
 deploy:
   provider: releases
-  api_key: "b9af1a0fd685913c20228b40c08104d0dc7175ab"
+  api_key: nMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA5Py2NLP8O8iVc+BDkrVd\nSmMrbtv7q2zKPw57E/5SAVXkmK2/6f3QZwhyWF+42duvmc8M7NmeZqoWx7Q1oZlR\ncKhY3jK8KcwFIKEcA8gaRdXDCP7DDkdlBhDJsqYDkVTM21beaT5AXmU+FJGTH0YE\nkRQ8jy8sRI0kObp36a852g9S0XnwqseFVjBvtJFb87YLxTcxOVyYtonZMnb7qD6p\nl5TzjtRnFfljalncZx/ASFHpq2mE3y3y1if7wUNJXrU91CuqHcYJ504VkaXGLWAZ\nZjWPMvhiPMfCig3MCkw7Lqww4SUO2IaFJyut3gyRQxfDcIeF7PW3F+0zd2RFBDFf\nDxhm/1CNo/5bVrZ3YRi0+1vFa8Y+fAMoyS3S69MtLDEzUu0kvpTQHuGSPYCf6onD\nMgojNRclfPnm4M9rzm/1JcwjVum/4KtAOEX9piGlG/4QGF/eXC81WIx5+LyjJtM+\nNegXpPoWxFxrEU5lNAL/iZMoyepHiPaRCUgpa5HUKRu25u0fQ8cq0e5aAOpRuo+x\nSbh35bJjly5s7S1cdK6Ze7jVRUWGn/gJdwgGgEnaSrg1NSSG2QkiNgsdc4HJele3\ndlzglh90VW+1Kjc1gSd/3Xnsqw0/wb7rbVJKniV//e9tRJ+rSgEDuRnCCC74ud4F\nYU1XpzKJbz+x+ZLq1/AWFB0CAwEAAQ==
   file: src/*
   skip_cleanup: true
   on:
