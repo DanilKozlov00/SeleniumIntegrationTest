@@ -10,17 +10,7 @@ before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3 
-deploy:
-  provider: release
-  github-token: 997cc9cbd14e5ed06e075e5a965938bc4e5327cc
-  committer-from-gh: true
-  skip-cleanup: true
-  keep-history: true
-  local-dir: build
-  repo: DanilKozlov00/SeleniumIntegrationTest
-  target-branch: Test
-  on:
-    branch: Test
+
 install: 
     - wget -N http://chromedriver.storage.googleapis.com/2.43/chromedriver_linux64.zip -P ~/
     - unzip ~/chromedriver_linux64.zip -d ~/
