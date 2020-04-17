@@ -36,7 +36,6 @@ public class Selenium {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         options.addArguments("enable-automation");
-        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-dev-shm-usage");
@@ -122,14 +121,14 @@ public class Selenium {
                         for (int i = 1; i < Good_File_Size.size(); i++) { //начинать с 1!!
                             driver.get(Var_Repository + "/blob/master/" + Good_File_Str_Mas[i]);
                             driver.findElement(By.xpath("//a[@id='raw-url']")).click();
-                            Good_branches_Name = driver.findElement(By.cssSelector("body")).getAttribute("textContent");
+                            Good_branches_Name = driver.findElement(By.cssSelector("body")).getAttribute("textContent").replaceAll(" ", "").replaceAll("\n", "").toLowerCase();
                             Change_Tab(1);
                             driver.get(Repository + "/blob/master/" + Var_File_Str_Mas[i]);
                             if (driver.findElements(By.xpath("//a[@id='raw-url']")).size()!=0) {
                                 driver.findElement(By.xpath("//a[@id='raw-url']")).click();
                             }
                             else { return "В ветке master неверный тип файла/файлов\n"; }
-                            Var_branches_Name = driver.findElement(By.cssSelector("body")).getAttribute("textContent");
+                            Var_branches_Name = driver.findElement(By.cssSelector("body")).getAttribute("textContent").replaceAll(" ", "").replaceAll("\n", "").toLowerCase();
                             Change_Tab(0);
                             if (!Good_branches_Name.equals(Var_branches_Name)) {
                                 correct_file = false;
@@ -162,14 +161,14 @@ public class Selenium {
                                     for (int i = 1; i < Good_File_Size.size(); i++) { //начинать с 1!!
                                         driver.get(Var_Repository + "/blob/" + good_name + "/" + Good_File_Str_Mas[i]);
                                         driver.findElement(By.xpath("//a[@id='raw-url']")).click();
-                                        Good_branches_Name = driver.findElement(By.cssSelector("body")).getAttribute("textContent");
+                                        Good_branches_Name = driver.findElement(By.cssSelector("body")).getAttribute("textContent").replaceAll(" ", "").replaceAll("\n", "").toLowerCase();
                                         Change_Tab(1);
                                         driver.get(Repository + "/blob/" + good_name + "/" + Var_File_Str_Mas[i]);
                                         if (driver.findElements(By.xpath("//a[@id='raw-url']")).size()!=0) {
                                             driver.findElement(By.xpath("//a[@id='raw-url']")).click();
                                         }
                                         else { return "В ветке "+good_name+" неверный тип файла/файлов\n"; }
-                                        Var_branches_Name = driver.findElement(By.cssSelector("body")).getAttribute("textContent");
+                                        Var_branches_Name = driver.findElement(By.cssSelector("body")).getAttribute("textContent").replaceAll(" ", "").replaceAll("\n", "").toLowerCase();
                                         Change_Tab(0);
                                         if (!Good_branches_Name.equals(Var_branches_Name)) {
                                             correct_file = false;

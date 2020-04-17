@@ -12,7 +12,7 @@ before_script:
   - sleep 3 
 deploy:
   provider: release
-  github-token: 997cc9cbd14e5ed06e075e5a965938bc4e5327cc
+  github-token: 788f27f3a8b0657dcc1c21c6c4b385ebcd47a96c
   committer-from-gh: true
   skip-cleanup: true
   keep-history: true
