@@ -34,11 +34,13 @@ public class SeleniumTest {
     @Parameters(name = "{index}: ({0},{1}) = {2}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
+/*
                 {"https://github.com/vvtatyana/Losiash","1", "0"},
                 {"https://github.com/vvtatyana/Krosh","2","0"},
                 {"https://github.com/vvtatyana/Yozhik","3","0"},
                 {"https://github.com/vvtatyana/Barash","4","0"},
-                {"https://github.com/vvtatyana/Nusha","5","0"},
+*/
+                {"https://github.com/vvtatyana/Nusha","5","0"}/*,
                 {"https://github.com/vvtatyana/Pin","6","0"},
                 {"https://github.com/vvtatyana/Sovunya","7","0"},
                 {"https://github.com/vvtatyana/Pandi","8","0"},
@@ -48,7 +50,7 @@ public class SeleniumTest {
                 {"https://github.com/vvtatyana/Mysharik","12","0"},
                 {"https://github.com/vvtatyana/Mulya", "13", "0"},
                 {"https://github.com/vvtatyana/Zheleznaya_Nyanya", "14", "0"},
-                {"https://github.com/vvtatyana/Tigritsiya", "15", "0"},
+                {"https://github.com/vvtatyana/Tigritsiya", "15", "0"},*/
         });
     }
 

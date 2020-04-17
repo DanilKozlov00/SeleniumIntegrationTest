@@ -23,10 +23,11 @@ install:
 deploy:
   provider: releases
   api_key: 961dfbd97b4a186495dd8decd9c91a2230104fdb
-  file: "test"
+  file: src/*
   skip_cleanup: true
   on:
     tags: false
+    branches: master
 
 # Improve Build Speed https://dzone.com/articles/travis-ci-tutorial-java-projects
 cache:
