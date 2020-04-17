@@ -12,6 +12,7 @@ deploy:
   skip_cleanup: true
    on:
     branch: master
+    tags: false
 sudo: required
 dist: trusty
 addons: # get google-chrome-stable
