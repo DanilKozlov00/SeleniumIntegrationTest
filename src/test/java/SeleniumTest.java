@@ -45,8 +45,8 @@ public class SeleniumTest {
                 {"https://github.com/vvtatyana/Kopatych","10","0"},
                 {"https://github.com/vvtatyana/Bibi","11","0"},
                 {"https://github.com/vvtatyana/Mysharik","12","0"},
-                {"https://github.com/vvtatyana/Mulya", "13", "0"},/*
-                {"https://github.com/vvtatyana/Zheleznaya_Nyanya", "14", "0"},*/
+                {"https://github.com/vvtatyana/Mulya", "13", "0"},
+                {"https://github.com/vvtatyana/Zheleznaya_Nyanya", "14", "0"},
                 {"https://github.com/vvtatyana/Tigritsiya", "15", "0"},
         });
     }
