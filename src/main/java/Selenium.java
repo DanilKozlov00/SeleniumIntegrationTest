@@ -36,6 +36,7 @@ public class Selenium {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         options.addArguments("enable-automation");
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-infobars");
         options.addArguments("--disable-dev-shm-usage");
