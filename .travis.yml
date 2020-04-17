@@ -5,6 +5,7 @@ jdk:
 
 sudo: required
 dist: trusty
+
 addons: # get google-chrome-stable
   chrome: stable
 before_script:
@@ -18,6 +19,14 @@ install:
     - rm ~/chromedriver_linux64.zip
     - sudo mv -f ~/chromedriver /usr/local/share/
     - sudo chmod +x /usr/local/share/chromedriver
+
+deploy:
+  provider: releases
+  api_key: 961dfbd97b4a186495dd8decd9c91a2230104fdb
+  file: "test"
+  skip_cleanup: true
+  on:
+    tags: false
 
 # Improve Build Speed https://dzone.com/articles/travis-ci-tutorial-java-projects
 cache:
