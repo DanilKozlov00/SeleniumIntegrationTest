@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -34,6 +35,7 @@ public class SeleniumTest {
     @Parameters(name = "{index}: ({0},{1}) = {2}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
+
                 {"https://github.com/vvtatyana/Losiash","1", "0"},
                 {"https://github.com/vvtatyana/Krosh","2","0"},
                 {"https://github.com/vvtatyana/Yozhik","3","0"},
@@ -46,9 +48,9 @@ public class SeleniumTest {
                 {"https://github.com/vvtatyana/Kopatych","10","0"},
                 {"https://github.com/vvtatyana/Bibi","11","0"},
                 {"https://github.com/vvtatyana/Mysharik","12","0"},
-                {"https://github.com/vvtatyana/Mulya", "13", "0"},/*
-                {"https://github.com/vvtatyana/Zheleznaya_Nyanya", "14", "0"},*/
-                {"https://github.com/vvtatyana/Tigritsiya", "15", "0"},
+                {"https://github.com/vvtatyana/Mulya", "13", "0"},
+                {"https://github.com/vvtatyana/Zheleznaya_Nyanya", "14", "0"},
+                {"https://github.com/vvtatyana/Tigritsiya", "15", "0"}
         });
     }
 
