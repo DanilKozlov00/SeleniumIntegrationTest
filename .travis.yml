@@ -41,6 +41,6 @@ deploy:
      
   on:
     repo: DanilKozlov00/SeleniumIntegrationTest
-    tags:true
+   
 
 
