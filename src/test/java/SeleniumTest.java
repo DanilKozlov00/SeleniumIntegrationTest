@@ -1,6 +1,5 @@
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -56,8 +55,8 @@ public class SeleniumTest {
 
     @Test
     public void test() {
-        selen.test();
-        Assert.assertEquals(selen.Get_Ozenka(), is(expected));
+       selen.test();
+        assertThat(selen.Get_Ozenka(), is(expected));
         System.out.println(selen.Get_Result());
     }
 
