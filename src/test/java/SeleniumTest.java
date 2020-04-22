@@ -37,8 +37,7 @@ public class SeleniumTest {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
 
-              {"https://github.com/vvtatyana/Losiash","1", "0","Файл Readme неверен\nНаполнение файлов в ветке master неверно\nНадпись на странице Home: 'Welcome to the Losyash wiki!'\nа должно быть: 'Welcome to the Losiash wiki!'\n"},
-
+                {"https://github.com/vvtatyana/Losiash","1", "0","Файл Readme неверен\nНаполнение файлов в ветке master неверно\nНадпись на странице Home: 'Welcome to the Losyash wiki!'\nа должно быть: 'Welcome to the Losiash wiki!'\n"},
                 {"https://github.com/vvtatyana/Krosh","2","0", "Неверное имя ветки\n"},
                 {"https://github.com/vvtatyana/Yozhik","3","0","Файл Readme не найден\nВ ветке master неверное кол-во файлов\n"},
                 {"https://github.com/vvtatyana/Barash","4","0","В ветке master неверное кол-во файлов\n"},
