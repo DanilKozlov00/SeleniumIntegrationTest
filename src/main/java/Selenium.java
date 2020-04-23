@@ -35,6 +35,8 @@ public class Selenium {
         this.variant=variant;
         WebDriverManager.chromedriver().version("80.0.3987.106").setup();
         ChromeOptions options = new ChromeOptions();
+        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+        options.addArguments("--headless");
         options.addArguments("start-maximized");
         options.addArguments("enable-automation");
         options.addArguments("--no-sandbox");
