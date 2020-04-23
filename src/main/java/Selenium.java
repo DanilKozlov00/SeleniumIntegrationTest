@@ -33,7 +33,7 @@ public class Selenium {
     public Selenium (String Repository,String variant){
         this.Repository=Repository;
         this.variant=variant;
-        WebDriverManager.chromedriver().version("81.0.4044.20").setup();
+        WebDriverManager.chromedriver().version("80.0.3987.106").setup();
         ChromeOptions options = new ChromeOptions();
         options.setPageLoadStrategy(PageLoadStrategy.EAGER);
         options.addArguments("--headless");
