@@ -12,7 +12,6 @@ before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - sleep 3
-script: mvn install
 install:
 - wget -N http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
   -P ~/
@@ -34,6 +33,7 @@ after_success:
 - git push --quiet https://$GITHUBKEY@github.com/dev-confidence/example-backend-api $GIT_TAG > /dev/null 2>&1
 
 deploy:
+  script:mvn package
   skip_cleanup: true
   provider: releases
   prerelease: true
