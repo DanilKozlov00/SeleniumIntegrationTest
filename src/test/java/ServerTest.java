@@ -78,7 +78,7 @@ public class ServerTest {
 
         return Arrays.asList(new Object[][]{
 
-                {"{\"messageType\":\"1\",\"variant\":\"1\",\"link\":\"https:\\/\\/github.com\\/vvtatyana\\/Losiash.git\",\"lab\":\"3\"}","1","1","3","https://github.com/vvtatyana/Losiash.git"},
+                {"{\"messageType\":\"1\",\"variant\":\"1\",\"link\":\"https:\\/\\/github.com\\/vvtatyana\\/Losiash.git\",\"lab\":\"3\"}","1","3","1","https://github.com/vvtatyana/Losiash.git"},
 
                 {"{\"messageType\":\"1\",\"variant\":\"2\",\"link\":\"https:\\/\\/github.com\\/vvtatyana\\/Krosh.git\",\"lab\":\"3\"}","1","3","2","https://github.com/vvtatyana/Krosh.git"},
 
