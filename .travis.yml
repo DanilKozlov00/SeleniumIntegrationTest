@@ -7,8 +7,6 @@ jdk:
 sudo: required
 dist: trusty
 
-before_script:
-  -cd /
 
 cache:
   directories:
