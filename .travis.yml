@@ -6,14 +6,9 @@ jdk:
 - oraclejdk11
 sudo: required
 dist: trusty
-addons:
-  chrome: stable
-before_script:
-- export DISPLAY=:99.0
-- sh -e /etc/init.d/xvfb start
-- sleep 3
+
 script:
-  -cd 03
+  -cd LR
 
 install:
 - wget -N http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
