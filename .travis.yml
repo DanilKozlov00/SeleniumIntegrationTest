@@ -8,15 +8,8 @@ sudo: required
 dist: trusty
 
 script:
-  -cd LR
+  -cd SeleniumIntegrationTest
 
-install:
-- wget -N http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
-  -P ~/
-- unzip ~/chromedriver_linux64.zip -d ~/
-- rm ~/chromedriver_linux64.zip
-- sudo mv -f ~/chromedriver /usr/local/share/
-- sudo chmod +x /usr/local/share/chromedriver
 cache:
   directories:
   - "$HOME/.m2"
