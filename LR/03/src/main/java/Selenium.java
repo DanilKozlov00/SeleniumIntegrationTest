@@ -89,8 +89,8 @@ public class Selenium {
             DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse(xmlFile);
-            String Good=Var_Repository.substring(0,30);
-            String Var=Good+Repository.substring(29);
+            String Good=Var_Repository.substring(Repository.indexOf("https://github.com/"),Repository.lastIndexOf("/")+1);
+            String Var=Good+Repository.substring(Repository.lastIndexOf("/"));
 
             doc.getDocumentElement().normalize();
 
@@ -522,8 +522,8 @@ public class Selenium {
     }
 
     public boolean Check_Repo_Name(){
-     String Good=Var_Repository.substring(29);
-     String Var=Repository.substring(29);
+     String Good=Var_Repository.substring(Var_Repository.lastIndexOf("/"));
+     String Var=Repository.substring(Repository.lastIndexOf("/"));
      if (Good.equals(Var)){
          return true;
      }
