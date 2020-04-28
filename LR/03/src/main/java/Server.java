@@ -10,13 +10,12 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.json.simple.*;
 import org.json.simple.parser.*;
-import org.junit.*;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import junit.*;
 import org.xml.sax.SAXException;
 
 public class Server {
