@@ -14,7 +14,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(value = Parameterized.class)
-public class ServerTest2 {
+public class ServerTest {
 	private String Gison;
     private Server server;
     private String expectedSilka;
@@ -24,7 +24,7 @@ public class ServerTest2 {
 
     // Inject via constructor
     // for {8, 2, 10}, numberA = 8, numberB = 2, expected = 10
-    public ServerTest2(String Gison,String expectedMesType,String expectedNomerLabi,
+    public ServerTest(String Gison,String expectedMesType,String expectedNomerLabi,
      String  expectedNomer,String expectedSilka) throws ParseException, IOException {
        this.Gison=Gison;
         this.expectedMesType=expectedMesType;
