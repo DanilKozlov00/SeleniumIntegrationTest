@@ -24,7 +24,7 @@ public class Selenium {
     private String result ="";
     public  String Repository;// Ссылка на репозитори
     public  String variant; // Номер варика который приходит
-    public  String id; // Номер варика ожидаемого в зависимости от имени REPO
+    public  String id="-1"; // Номер варика ожидаемого в зависимости от имени REPO
     private String itog_ozenka="0";
     private boolean empty=false;
     private String Var_Repository; // 1 Варик- Лосяш, 2 - Крош и тд
@@ -36,7 +36,7 @@ public class Selenium {
         ChromeOptions options = new ChromeOptions();
 
         options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
-        options.addArguments("--headless");
+       // options.addArguments("--headless");
         options.addArguments("start-maximized");
         options.addArguments("enable-automation");
         options.addArguments("--no-sandbox");
@@ -72,7 +72,6 @@ public class Selenium {
                 if (Node.ELEMENT_NODE == node.getNodeType()) {
                     Element element = (Element) node;
                     if (element.getAttribute("id").equals(variant)){
-
                         Var_Repository=element.getElementsByTagName("url").item(0).getTextContent();
                         break;
                     }
@@ -104,7 +103,6 @@ public class Selenium {
                     Element element = (Element) node;
                     if (element.getElementsByTagName("url").item(0).getTextContent().equals(Var)){
                         id=element.getAttribute("id");
-                        Var_Repository=element.getElementsByTagName("url").item(0).getTextContent();
                         break;
                     }
                 }
@@ -536,7 +534,7 @@ public class Selenium {
     public void test() {
         if (Var_Repository != null) {
             Check_Var();
-            if (id.equals(variant)) {
+            if (id.equals(variant)||id=="-1") {
                if (Check_Repo_Name()) {
                     if (!empty) {
 
@@ -565,12 +563,12 @@ public class Selenium {
                             result="Работа сдана\n";
                         }
                     } else {
-                        result = "Репозиторий пуст\n";
+                        { result = "Репозиторий пуст\n"; driver.quit();}
                     }
-                } else result = "Неверное имя репозитория\n";
-            }else result = "Неверный вариант\n";
-        } else {System.out.println("Не найден вариант в файле\n");
-        }
+                } else {result = "Неверное имя репозитория\n"; driver.quit();}
+
+            }else{result = "Неверный вариант\n"; driver.quit();}
+        } else {System.out.println("Не найден вариант в файле\n"); }
         driver.quit();
     }
 }
