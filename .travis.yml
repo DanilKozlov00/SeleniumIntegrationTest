@@ -14,7 +14,6 @@ before_script:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
 - sleep 3
-
 install:
 - wget -N http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
   -P ~/
@@ -27,9 +26,10 @@ cache:
   - "$HOME/.m2"
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-deploy:
-  on: 
-   script:if [[ $TRAVIS_COMMIT_MESSAGE == *33* ]]; then mvn install ; fi ;
+deploy: 
+   on:
+        tags: true
+        condition: "$TRAVIS_TAG =~ -release$"
 
 
 
