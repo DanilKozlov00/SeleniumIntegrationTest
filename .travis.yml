@@ -39,5 +39,5 @@ deploy:
      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/target/Selen-0.1-jar-with-dependencies.jar
      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Repository.xml     
   on:
-    tags: false
+    tags: true
     condition: "$TRAVIS_TAG =~ -release$"
