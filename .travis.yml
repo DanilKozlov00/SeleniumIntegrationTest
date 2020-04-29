@@ -27,11 +27,7 @@ cache:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:
-  # Set up git user name and tag this commit
-  - git config --local user.name "YOUR GIT USER NAME"
-  - git config --local user.email "YOUR GIT USER EMAIL"
-  - export TRAVIS_TAG=$v0.0.0.29/04/2020
-  - git tag $TRAVIS_TAG
+  - git tag $TRAVIS_TAG=$v0.0.1
 deploy: 
 skip_cleanup: true
   provider: releases
