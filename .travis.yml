@@ -27,6 +27,9 @@ cache:
   - "$HOME/.m2"
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+deploy:
+  on: 
+   script:if [[ $TRAVIS_COMMIT_MESSAGE == *33* ]]; then mvn install ; fi ;
 
 
 
