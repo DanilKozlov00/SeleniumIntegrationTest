@@ -39,7 +39,7 @@ deploy:
      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Repository.xml     
   on:
     tags: true
-    condition: "$TRAVIS_TAG =~ -release$"
+    condition: "$commit_message =~ -release$"
 
 
 
