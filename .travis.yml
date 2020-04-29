@@ -26,6 +26,8 @@ cache:
   - "$HOME/.m2"
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+before_deploy:
+      - git tag v0.0.1
 deploy:
   skip_cleanup: true
   provider: releases
@@ -37,5 +39,5 @@ deploy:
      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/target/Selen-0.1-jar-with-dependencies.jar
      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Repository.xml     
   on:
-    tags: true
+    tags: false
     condition: "$TRAVIS_TAG =~ -release$"
