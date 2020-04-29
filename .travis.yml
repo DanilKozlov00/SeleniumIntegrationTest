@@ -28,7 +28,7 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 
 deploy: 
-skip_cleanup: true
+  skip_cleanup: true
   provider: releases
   prerelease: true	
   name: 18-VTbo-1b  
@@ -38,7 +38,7 @@ skip_cleanup: true
      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/target/Selen-0.1-jar-with-dependencies.jar
      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Repository.xml
   on:
-    tags: true
+    tags:true
     condition: "$TRAVIS_TAG =~ -release$"
 
 
