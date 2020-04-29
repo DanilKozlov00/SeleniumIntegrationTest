@@ -19,6 +19,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 public class Server {
+    public static Selenium Selenium;
     public static int port;
     private static final String FILENAME = "Repository.xml";
     private static Socket clientSocket; //Сокет клиента
@@ -248,7 +249,8 @@ public class Server {
     public static void main(String[] args) throws ParseException, IOException {
         try {
             try  {
-                server = new ServerSocket(4003); //Сервер на порте 4003
+                SetPort();
+                server = new ServerSocket(port); //Сервер на порте 4003
                 System.out.println("Сервер запущен!");
                 clientSocket = server.accept(); //Сервер готов принимать сигнал
                 try {
@@ -445,7 +447,9 @@ public class Server {
 
 
                     if(conec==false) {
-                        out.write("Привет, это Сервер! Ответ: " + Otvet("1","NO") + "\n");
+                        Selenium=new Selenium(Repos,NomberVar);
+                        Selenium.test();
+                        out.write("Привет, это Сервер! Ответ: " + Otvet(Selenium.Get_Ozenka(),Selenium.Get_Result()) + "\n");
                         out.flush();
                     }
 
@@ -456,6 +460,7 @@ public class Server {
                     out.close();
                 }
             }
+
             finally {
                 System.out.println("Сервер закрыт!");
                 server.close();
