@@ -38,8 +38,7 @@ deploy:
      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Repository.xml     
   on:
     tags: false
-    condition: sender == DanilKozlov00
-
+    condition: commit_message =~ /release/
 
 
 
