@@ -26,7 +26,6 @@ cache:
   - "$HOME/.m2"
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-if: commit_message ~ /(\[release\])/
 deploy:
   skip_cleanup: true
   provider: releases
@@ -39,7 +38,7 @@ deploy:
      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Repository.xml     
   on:
     tags: false
-    condition: "$commit_message =~ -release$"
+    condition: commit_message ~ /(\[release\])/
 
 
 
