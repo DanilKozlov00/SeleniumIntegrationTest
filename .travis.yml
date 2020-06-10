@@ -6,7 +6,7 @@ branches:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:  
-      TRAVIS_TAG="v`cat VERSION.txt`"
+    - TRAVIS_TAG="v`cat VERSION.txt`"
     - git tag $TRAVIS_TAG
 deploy:
   edge: true
