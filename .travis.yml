@@ -6,10 +6,10 @@ branches:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:  
-    - cd ../../
     - TAG="v0.0.0."$VERSION
     - git tag $TAG
     - echo "VERSION = $VERSION++" 
+    - import VERSION
 deploy:
   edge: true
   token: $GITHUB_TOKEN
