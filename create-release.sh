@@ -16,7 +16,7 @@ git remote add origin_ssh git@github.com:DanilKozlov00/SeleniumIntegrationTest.g
 # 
 # See `.travis/README.md` for more details
 openssl aes-256-cbc -d -k $GITHUB_TOKEN \
-  -in .travis/prototype-kit-deploy-key.enc \
+  -in .travis/SeleniumIntegrationTest.enc \
   -out ~/.ssh/id_rsa
 
 chmod 600 ~/.ssh/id_rsa
