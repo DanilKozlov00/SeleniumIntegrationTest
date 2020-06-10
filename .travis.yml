@@ -7,10 +7,10 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:  
     - cd ../../
-    - TAG="v`cat VERSION.txt`"
+    - TAG="v0.0.0.'cat VERSION.txt'"
     - git tag $TAG
     - TAG=$`cat VERSION.txt`
-    - echo "TAG = $TAG"+"$0.0.1" 
+    - echo "TAG = $TAG++" 
     - echo $TAG > VERSION.txt
 deploy:
   edge: true
