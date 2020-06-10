@@ -9,9 +9,7 @@ deploy:
 - provider: script
   script: ./create-release.sh
   token: $GITHUB_TOKEN
-  cleanup: true
-  provider: releases
-  prerelease: true
-  name: TPRO
+  cleanup: true 
+
 
 
