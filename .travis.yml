@@ -6,7 +6,7 @@ branches:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:  
-    - TAG="v0.0.0."$TRAVIS_JOB_ID
+    - TAG="v0.0.0."$TRAVIS_BUILD_NUMBER
     - git tag $TAG
 deploy:
   edge: true
