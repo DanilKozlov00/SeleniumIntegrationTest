@@ -10,8 +10,8 @@ before_deploy:
     - TAG="v`cat VERSION.txt`"
     - git tag $TAG
     - TAG=$`cat VERSION.txt`
-    - $TAG+$(0.0.1)
-    - echo $a > <VERSION.txt>
+    - $TAG++
+    - echo $TAG > <VERSION.txt>
 deploy:
   edge: true
   token: $GITHUB_TOKEN
