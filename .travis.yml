@@ -5,6 +5,11 @@ branches:
   - master
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+before_deploy:  
+    - git fetch --tags
+    - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+    - TAG="v0.0.0."$TRAVIS_BUILD_NUMBER
+    - git tag $TAG
 deploy:
   edge: true
   token: $GITHUB_TOKEN
