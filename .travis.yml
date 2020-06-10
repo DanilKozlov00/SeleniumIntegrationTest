@@ -10,7 +10,7 @@ before_deploy:
     - git tag $TRAVIS_TAG
 deploy:
   - provider: script
-  script: ./create-release.sh
+         script: ./create-release.sh
   token: $GITHUB_TOKEN
   cleanup: true
   provider: releases
