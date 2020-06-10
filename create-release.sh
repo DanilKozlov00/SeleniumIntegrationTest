@@ -7,6 +7,20 @@ if [[ -z "${TRAVIS}" ]]; then
   exit 1
 fi
 
+# Configure git...
+git config --global user.name "Travis CI"
+git config --global user.email "travis@travis-ci.org"
+git remote add origin_ssh git@github.com:DanilKozlov00/SeleniumIntegrationTest.git
+
+# Decrypt deploy key.
+# 
+# See `.travis/README.md` for more details
+openssl aes-256-cbc -d -k $GITHUB_TOKEN \
+  -in .travis/prototype-kit-deploy-key.enc \
+  -out ~/.ssh/id_rsa
+
+chmod 600 ~/.ssh/id_rsa
+
 # Get the version from the version file
 VERSION_TAG="v`cat VERSION.txt`"
 
