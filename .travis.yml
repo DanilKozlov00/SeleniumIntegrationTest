@@ -6,6 +6,7 @@ branches:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 deploy:
+  edge: true
 - provider: script
   script: ./create-release.sh
   token: $GITHUB_TOKEN
