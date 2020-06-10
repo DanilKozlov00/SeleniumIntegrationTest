@@ -8,7 +8,7 @@ after_success:
 before_deploy:  
     - git fetch --tags
     - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-    - TAG="v0.0.0."$TRAVIS_BUILD_NUMBER
+    - TAG="v0.0.0."$TAG
     - git tag $TAG
 deploy:
   edge: true
