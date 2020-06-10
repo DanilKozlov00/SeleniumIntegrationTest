@@ -8,7 +8,9 @@ after_success:
 before_deploy:  
     - git fetch --tags
     - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-    - TAG=$TAG++
+    - IFS='.' read -ra my_array <<< "$TAG"
+    - NUMBER="${my_array[5]}"
+    - TAG=v0.0.0.$NUMBER
     - git tag $TAG
 deploy:
   edge: true
