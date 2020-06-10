@@ -8,7 +8,7 @@ after_success:
 before_deploy:  
     - cd ../../
     - TAG="v`cat VERSION.txt`"
-    - git tag TAG
+    - git tag $TAG
     - TAG=$cat(<VERSION.txt>); (( 0.0.1 )); echo $a > <VERSION.txt>
 deploy:
   edge: true
