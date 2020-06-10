@@ -16,5 +16,4 @@ deploy:
   cleanup: true
   provider: releases
   prerelease: true
-  tags: true
   name: TPRO
