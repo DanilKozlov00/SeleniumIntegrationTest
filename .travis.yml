@@ -10,7 +10,7 @@ before_deploy:
     - TAG="v`cat VERSION.txt`"
     - git tag $TAG
     - TAG=$`cat VERSION.txt`
-    - $TAG+$0.0.1
+    - TAG+0.0.1
     - echo $a > <VERSION.txt>
 deploy:
   edge: true
