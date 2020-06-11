@@ -85,7 +85,7 @@ matrix:
           - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/pom.xml
         prerelease: true
         name: TPRO
-        tag_name: "$TRAVIS_TAG"
+        tag_name: $TRAVIS_TAG
           on:
             tags: true
           edge: true
