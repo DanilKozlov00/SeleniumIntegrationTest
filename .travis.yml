@@ -23,9 +23,7 @@ before_deploy:
     - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
 
 deploy:
-  edge: true
   token: $GITHUB_TOKEN
-  cleanup: true
   provider: releases
   prerelease: true
   file: 
