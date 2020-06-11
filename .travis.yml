@@ -14,12 +14,12 @@ before_deploy:
     - TAG=v0.0.0.$NUMBER
     - git tag $TAG
     - mkdir Project
-    - cd /home/LR/03/target
+    - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/target
     - mv Selen-0.1-jar-with-dependencies.jar home/Project
     - cd ../
     - mv Repository.xml home/Project
     - cd ../../
-    - mv VERSION.txt home/Project
+    - mv VERSION.txt home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - zip Project.zip Project
 
 deploy:
