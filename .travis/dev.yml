@@ -53,7 +53,7 @@ matrix:
         - sudo qmake tests.pro && make
         - sudo ./tests
     - stage: deploy
-    - language: ruby
+      language: ruby
       rvm:
         - 1.9.3
       script:
