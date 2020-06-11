@@ -28,10 +28,11 @@ matrix:
         - bash <(curl -s https://codecov.io/bash)
       deploy:
         provider: releases
+        prerelease: true
         edge: true
         token: $GITHUB_TOKEN
         overwrite: true
-        tag_name: v0.0.0.28
+        tag_name: v0.0.0.29
         cleanup: false
         file:
           - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/07/src/main.cpp
