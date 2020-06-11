@@ -22,7 +22,7 @@ before_deploy:
     - cd ../
     - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
     - cd ../../
-    - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
+    - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/
     - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
     - rar a Project.rar Project
 deploy:
@@ -31,6 +31,6 @@ deploy:
   cleanup: true
   provider: releases
   file: 
-    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/VERSION.txt
+    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/VERSION.txt
   prerelease: true
   name: TPRO
