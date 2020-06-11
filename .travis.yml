@@ -25,13 +25,12 @@ before_deploy:
     - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
     - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
     - rar a Project.rar Project
-    - git add Project.rar
 deploy:
   edge: true
   token: $GITHUB_TOKEN
   cleanup: true
   provider: releases
   file: 
-    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project.rar
+    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/.travis.yml
   prerelease: true
   name: TPRO
