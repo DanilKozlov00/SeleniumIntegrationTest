@@ -75,34 +75,21 @@ matrix:
       cache:
         directories:
           - "$HOME/.m2"
-      before_deploy:
-        - git fetch --tags
-        - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-        - IFS='.' read -ra my_array <<< "$TAG"
-        - NUMBER="${my_array[3]}"
-        - NUMBER="$((NUMBER+1))"
-        - TAG=v0.0.0.$NUMBER
-        - git tag $TAG
-        - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
-        - mkdir Project
-        - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/03/target
-        - mv Selen-0.1-jar-with-dependencies.jar /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
-        - cd ../
-        - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
-        - cd ../../
-        - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
-        - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
-        - rar a Project.rar Project
+
       deploy:
         edge: true
         token: $GITHUB_TOKEN
         cleanup: false
         provider: releases
+        overwrite: true
         draft: true
         file:
-          - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project.rar
+          - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/03/pom.xml
         prerelease: true
         name: TPRO
+        tag_name: "$TRAVIS_TAG"
+          on:
+            tags: true
     - stage: deploy2
       language: cpp
       os: linux
@@ -129,6 +116,14 @@ matrix:
       before_script: cd LR/07/src
       script:
         - sudo qmake src.pro && make
+      before_deploy:
+        - git fetch --tags
+        - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+        - IFS='.' read -ra my_array <<< "$TAG"
+        - NUMBER="${my_array[3]}"
+        - NUMBER="$((NUMBER+1))"
+        - TAG=v0.0.0.$NUMBER
+        - git tag $TAG
       deploy:
         edge: true
         token: $GITHUB_TOKEN
