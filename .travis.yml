@@ -21,6 +21,7 @@ before_deploy:
     - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - cd ../../
     - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Projects
+    - sudo apt-get install rar
     - rar -a Project.rar Project
 
 deploy:
