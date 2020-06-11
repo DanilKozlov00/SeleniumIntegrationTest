@@ -53,6 +53,7 @@ matrix:
         - sudo qmake tests.pro && make
         - sudo ./tests
     - stage : deploy
+    - language: generic
        before_deploy:
          - git fetch --tags
          - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
