@@ -13,7 +13,7 @@ before_deploy:
     - NUMBER="$((NUMBER+1))"
     - TAG=v0.0.0.$NUMBER
     - git tag $TAG
-    - cd home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
+    - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
     - mkdir Project
     - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/03/target
     - mv Selen-0.1-jar-with-dependencies.jar home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
