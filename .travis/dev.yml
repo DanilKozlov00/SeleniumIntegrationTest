@@ -103,7 +103,7 @@ matrix:
           - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project.rar
         prerelease: true
         name: TPRO
-     language: cpp
+      language: cpp
       os: linux
       compiler: gcc
       cache: ccache
