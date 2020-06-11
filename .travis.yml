@@ -15,9 +15,9 @@ before_deploy:
     - git tag $TAG
     - mkdir Project
     - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/03/target
-    - mv Selen-0.1-jar-with-dependencies.jar home/Project
+    - mv Selen-0.1-jar-with-dependencies.jar home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
     - cd ../
-    - mv Repository.xml home/Project
+    - mv Repository.xml home/travis/build/DanilKozlov00/SeleniumIntegrationTest/t
     - cd ../../
     - mv VERSION.txt home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - zip Project.zip Project
