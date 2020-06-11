@@ -109,6 +109,7 @@ matrix:
         - NUMBER="$((NUMBER+1))"
         - TAG=v0.0.0.27
       deploy:
+        provider: releases
         edge: true
         token: $GITHUB_TOKEN
         overwrite: true
