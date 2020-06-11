@@ -24,6 +24,7 @@ before_deploy:
     - cd ../../
     - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
+    - git add Project.rar
     - rar a Project.rar Project
 
 deploy:
