@@ -53,18 +53,7 @@ matrix:
         - sudo qmake tests.pro && make
         - sudo ./tests
     - stage: deploy
-      language: java
-      jdk: oraclejdk11
-      before_install:
-        - cd LR/03
-        addons:
-          chrome: stable
-        before_script:
-          - export DISPLAY=:99.0
-          - sh -e /etc/init.d/xvfb start
-          - sleep 3
-        script:
-          -  mvn install -DskipTests
+      language: generic
       before_deploy:
         - git fetch --tags
         - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
