@@ -1,5 +1,7 @@
 language: java
 before_install: cd LR/03
+install:
+  - sudo apt install rar
 branches:
   only:
   - master
@@ -21,12 +23,13 @@ before_deploy:
     - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - cd ../../
     - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
+    - rar -a Project.rar Project
 
 deploy:
   token: $GITHUB_TOKEN
   provider: releases
   prerelease: true
   file: 
-    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR.rar
+    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project.rar
   name: TPRO
 
