@@ -26,6 +26,17 @@ matrix:
           - "$HOME/.m2"
       after_success:
         - bash <(curl -s https://codecov.io/bash)
+      deploy:
+        provider: releases
+        edge: true
+        token: $GITHUB_TOKEN
+        overwrite: true
+        tag_name: v0.0.0.27
+        cleanup: false
+        file:
+          - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/07/src/main.cpp
+
+
     - language: cpp
       os: linux
       compiler: gcc
@@ -108,14 +119,3 @@ matrix:
         - NUMBER="${my_array[3]}"
         - NUMBER="$((NUMBER+1))"
         - TAG=v0.0.0.27
-      deploy:
-        provider: releases
-        edge: true
-        token: $GITHUB_TOKEN
-        overwrite: true
-        tag_name: $TAG
-        cleanup: false
-        file:
-          - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/07/src/main.cpp
-
-      
