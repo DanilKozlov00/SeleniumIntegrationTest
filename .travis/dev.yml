@@ -76,7 +76,7 @@ matrix:
         directories:
           - "$HOME/.m2"
       deploy:
-        edge: true
+        overwrite: true
         token: $GITHUB_TOKEN
         cleanup: false
         provider: releases
@@ -84,7 +84,7 @@ matrix:
         tag_name: "$TRAVIS_TAG"
           on:
             tags: true
-          edge: true
+        edge: true
         file:
           - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/pom.xml
     - stage: deploy2
