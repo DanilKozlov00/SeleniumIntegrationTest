@@ -21,7 +21,7 @@ before_deploy:
     - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - cd ../../
     - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
-    - zip Project.zip Project
+    - zip -r LR.zip LR
 
 deploy:
   edge: true
@@ -30,6 +30,6 @@ deploy:
   provider: releases
   prerelease: true
   file: 
-    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project.zip
+    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR.zip
   name: TPRO
 
