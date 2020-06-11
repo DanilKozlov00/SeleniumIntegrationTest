@@ -84,15 +84,22 @@ matrix:
         - TAG=v0.0.0.$NUMBER
         - git tag $TAG
         - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
-        - mkdir Project
+        - mkdir 18-VTbo-1b
         - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/03/target
-        - mv Selen-0.1-jar-with-dependencies.jar /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
+        - mv Selen-0.1-jar-with-dependencies.jar /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b/
         - cd ../
-        - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
+        - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b/
         - cd ../../
-        - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
-        - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
-        - rar a Project.rar Project
+        - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b/
+        - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b
+        - mkdir LR
+        - mv Selen-0.1-jar-with-dependencies.jar /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b/LR
+        - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b/LR
+        - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b/LR/
+        - mkdir 03
+        - mv Selen-0.1-jar-with-dependencies.jar /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b/LR/03
+        - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b/LR/03
+        - rar a 18-VTbo-1b.rar 18-VTbo-1b
       deploy:
         edge: true
         token: $GITHUB_TOKEN
