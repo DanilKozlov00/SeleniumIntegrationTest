@@ -24,7 +24,7 @@ before_deploy:
     - cd ../../
     - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
-    - rar -a Project.rar Project
+    - rar a Project.rar Project
 
 deploy:
   edge: true
