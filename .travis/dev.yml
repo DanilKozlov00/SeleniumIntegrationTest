@@ -52,7 +52,10 @@ matrix:
       script:
         - sudo qmake tests.pro && make
         - sudo ./tests
-    - language: generic
+    - stage: deploy
+    - language: ruby
+      rvm:
+        - 1.9.3
       script:
       before_deploy:
         - git fetch --tags
