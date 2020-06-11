@@ -65,7 +65,6 @@ matrix:
         - sh -e /etc/init.d/xvfb start
         - sleep 3
       script:
-        - mvn install -DskipTests
       install:
         - wget -N http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
           -P ~/
