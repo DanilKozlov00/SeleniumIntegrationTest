@@ -1,0 +1,94 @@
+dist: trusty
+sudo: required
+matrix:
+  include:
+    - stage: test
+    - language: java
+      branches:
+        only:
+        - master
+        - 18-VTbo-1b
+        - dev
+      jdk: oraclejdk11
+      before_install: 
+        - cd LR/03
+      addons:
+        chrome: stable
+      before_script:
+        - export DISPLAY=:99.0
+        - sh -e /etc/init.d/xvfb start
+        - sleep 3
+      script:
+        - mvn install
+      install:
+         - wget -N http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
+           -P ~/
+         - unzip ~/chromedriver_linux64.zip -d ~/
+         - rm ~/chromedriver_linux64.zip
+         - sudo mv -f ~/chromedriver /usr/local/share/
+         - sudo chmod +x /usr/local/share/chromedriver
+      cache:
+        directories:
+          - "$HOME/.m2"
+      after_success:
+         - bash <(curl -s https://codecov.io/bash)   
+    - language: cpp
+      branches:
+        only:
+          - master
+          - 18-VTbo-1a
+          - dev
+      os: linux
+      compiler: gcc
+      cache: ccache
+      addons:
+        apt:
+          update: true
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-7
+      before_install:
+        - export PATH="/usr/lib/ccache:$PATH"
+        - CC=gcc-7 && CXX=g++-7
+      install:
+        - sudo apt-get install -y qt5-default qttools5-dev-tools
+        - sudo apt-get install mesa-common-dev
+        - sudo apt-get install libgl1-mesa-dev
+        - chmod ugo+x LR/07/tests/getTestSuites/downloadTestSuites.sh
+        - LR/07/tests/getTestSuites/downloadTestSuites.sh
+      after_script:
+        - make clean
+      before_script: cd LR/07/tests
+      script:
+        - sudo qmake tests.pro && make
+        - sudo ./tests
+      - stage: deploy
+        before_deploy:  
+    - git fetch --tags
+    - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+    - IFS='.' read -ra my_array <<< "$TAG"
+    - NUMBER="${my_array[3]}"
+    - NUMBER="$((NUMBER+1))"
+    - TAG=v0.0.0.$NUMBER
+    - git tag $TAG
+    - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
+    - mkdir Project
+    - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/03/target
+    - mv Selen-0.1-jar-with-dependencies.jar /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
+    - cd ../
+    - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
+    - cd ../../
+    - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
+    - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
+    - rar a Project.rar Project
+    deploy:
+     edge: true
+     token: $GITHUB_TOKEN
+     cleanup: false
+     provider: releases
+     file: 
+      - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project.rar
+     prerelease: true
+     name: TPRO
+

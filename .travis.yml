@@ -1,36 +1,13 @@
-language: java
-before_install: 
-    - cd LR/03
-    - sudo apt-get install rar
 branches:
   only:
   - master
-after_success:
-- bash <(curl -s https://codecov.io/bash)
-before_deploy:  
-    - git fetch --tags
-    - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-    - IFS='.' read -ra my_array <<< "$TAG"
-    - NUMBER="${my_array[3]}"
-    - NUMBER="$((NUMBER+1))"
-    - TAG=v0.0.0.$NUMBER
-    - git tag $TAG
-    - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
-    - mkdir Project
-    - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/03/target
-    - mv Selen-0.1-jar-with-dependencies.jar /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
-    - cd ../
-    - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
-    - cd ../../
-    - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/
-    - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
-    - rar a Project.rar Project
-deploy:
-  edge: true
-  token: $GITHUB_TOKEN
-  cleanup: false
-  provider: releases
-  file: 
-    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project.rar
-  prerelease: true
-  name: TPRO
+  - dev
+  - 18-VTbo-1b
+  - 18-VTbo-1a
+import:
+- source: .travis/18-VTbo-1a.yml
+  if: (((branch = issue-*)&&(head_branch = 18-VTbo-1a) ||  (branch = 18-VTbo-1a)))
+- source: .travis/18-VTbo-1b.yml
+  if: (((branch = issue-*)&&(head_branch = 18-VTbo-1b) ||  (branch = 18-VTbo-1b)))
+- source: .travis/dev.yml
+  if: ((branch = maseter) || (head_branch = master))
