@@ -53,9 +53,8 @@ matrix:
         - sudo qmake tests.pro && make
         - sudo ./tests
     - stage: deploy
-      language: ruby
-      rvm:
-        - 1.9.3
+      language: java
+      jdk: oraclejdk11
       script:
       before_deploy:
         - git fetch --tags
