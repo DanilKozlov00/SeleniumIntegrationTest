@@ -56,4 +56,3 @@ jobs:
        script:
          - sudo qmake tests.pro && make
          - sudo ./tests
-   -stage: deploy
