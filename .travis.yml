@@ -13,6 +13,8 @@ before_deploy:
     - NUMBER="$((NUMBER+1))"
     - TAG=v0.0.0.$NUMBER
     - git tag $TAG
+    - cd /HOME
+    - zip LR
 deploy:
   edge: true
   token: $GITHUB_TOKEN
