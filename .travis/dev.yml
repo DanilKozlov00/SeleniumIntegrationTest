@@ -114,9 +114,7 @@ matrix:
         token: $GITHUB_TOKEN
         overwrite: true
         cleanup: false
-        provider: releases
         file:
           - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/07/src/main.cpp
-        prerelease: true
-        name: TPRO
+
       
