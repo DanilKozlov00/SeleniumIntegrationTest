@@ -20,3 +20,4 @@ deploy:
   provider: releases
   prerelease: true
   name: TPRO
+
