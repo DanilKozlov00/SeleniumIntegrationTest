@@ -3,6 +3,8 @@ before_install: cd LR/03
 branches:
   only:
   - master
+before_install:
+  - sudo apt-get install rar
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:  
@@ -21,7 +23,7 @@ before_deploy:
     - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - cd ../../
     - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Projects
-    - sudo apt install rar
+
     - rar -a Project.rar Project
 
 deploy:
