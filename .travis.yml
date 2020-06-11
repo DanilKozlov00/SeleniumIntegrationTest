@@ -31,6 +31,6 @@ deploy:
   cleanup: true
   provider: releases
   file: 
-    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/.travis.yml
+    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project/VERSION.txt
   prerelease: true
   name: TPRO
