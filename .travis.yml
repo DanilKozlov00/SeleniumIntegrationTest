@@ -28,7 +28,7 @@ before_deploy:
 deploy:
   edge: true
   token: $GITHUB_TOKEN
-  cleanup: true
+  cleanup: false
   provider: releases
   file: 
     - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR/VERSION.txt
