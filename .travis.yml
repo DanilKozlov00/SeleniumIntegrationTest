@@ -22,7 +22,7 @@ before_deploy:
     - cd ../
     - mv Repository.xml /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - cd ../../
-    - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Projects
+    - mv VERSION.txt /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project
     - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/
     - rar -a Project.rar Project
 
