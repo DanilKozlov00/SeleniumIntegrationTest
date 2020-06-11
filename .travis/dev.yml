@@ -1,4 +1,4 @@
-matrix:
+jobs:
   include:
     - stage: test
     - language: java
@@ -61,3 +61,4 @@ matrix:
       script:
         - sudo qmake tests.pro && make
         - sudo ./tests
+      -stage: deploy
