@@ -75,16 +75,6 @@ matrix:
       cache:
         directories:
           - "$HOME/.m2"
-      deploy:
-        overwrite: true
-        token: $GITHUB_TOKEN
-        cleanup: false
-        provider: releases
-        draft: true
-        tag_name: "$TRAVIS_TAG"
-        edge: true
-        file:
-          - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/pom.xml
     - stage: deploy2
       language: cpp
       os: linux
@@ -117,11 +107,12 @@ matrix:
         - IFS='.' read -ra my_array <<< "$TAG"
         - NUMBER="${my_array[3]}"
         - NUMBER="$((NUMBER+1))"
-        - TAG=v0.0.0.$NUMBER
+        - TAG=v0.0.0.27
         - git tag $TAG
       deploy:
         edge: true
         token: $GITHUB_TOKEN
+        overwrite: true
         cleanup: false
         provider: releases
         file:
