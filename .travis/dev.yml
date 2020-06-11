@@ -57,6 +57,7 @@ matrix:
       jdk: oraclejdk11
       before_install:
         - cd LR/03
+        - sudo apt-get install rar
       addons:
         chrome: stable
       before_script:
