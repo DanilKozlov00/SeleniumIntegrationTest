@@ -128,7 +128,7 @@ matrix:
         - make clean
       before_script: cd LR/07/src
       script:
-        - sudo qmake src.pro && makes
+        - sudo qmake src.pro && make
       deploy:
         edge: true
         token: $GITHUB_TOKEN
