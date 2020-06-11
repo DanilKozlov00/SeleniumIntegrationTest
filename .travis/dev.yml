@@ -52,7 +52,6 @@ matrix:
       script:
         - sudo qmake tests.pro && make
         - sudo ./tests
-    - stage : deploy
     - language: generic
       script:
       before_deploy:
