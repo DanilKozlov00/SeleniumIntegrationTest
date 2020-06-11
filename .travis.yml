@@ -13,7 +13,7 @@ before_deploy:
     - NUMBER="$((NUMBER+1))"
     - TAG=v0.0.0.$NUMBER
     - git tag $TAG
-    - cd /HOME
+    - cd /home
     - zip LR
 deploy:
   edge: true
