@@ -30,6 +30,6 @@ deploy:
   provider: releases
   prerelease: true
   file: 
-    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/_config.yml
+    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/1.zip
   name: TPRO
 
