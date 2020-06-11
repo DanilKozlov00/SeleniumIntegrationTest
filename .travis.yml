@@ -27,6 +27,6 @@ deploy:
   provider: releases
   prerelease: true
   file: 
-    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR.zip
+    - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/LR.rar
   name: TPRO
 
