@@ -1,6 +1,6 @@
 jobs:
   include:
-    - stage: test
+- stage: 
     - language: java
       branches:
         only:
@@ -61,4 +61,4 @@ jobs:
       script:
         - sudo qmake tests.pro && make
         - sudo ./tests
-      -stage: deploy
+-stage:
