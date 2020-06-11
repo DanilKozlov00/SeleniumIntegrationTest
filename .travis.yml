@@ -13,8 +13,15 @@ before_deploy:
     - NUMBER="$((NUMBER+1))"
     - TAG=v0.0.0.$NUMBER
     - git tag $TAG
-    - cd /home
-    - zip LR
+    - mkdir Project
+    - cd /home/LR/03/target
+    - mv Selen-0.1-jar-with-dependencies.jar home/Project
+    - cd ../
+    - mv Repository.xml home/Project
+    - cd ../../
+    - mv VERSION.txt home/Project
+    - zip Project.zip Project
+
 deploy:
   edge: true
   token: $GITHUB_TOKEN
