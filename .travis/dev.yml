@@ -83,10 +83,6 @@ matrix:
         draft: true
         file:
           - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/pom.xml
-        tag_name: $TRAVIS_TAG
-          on:
-            tags: true
-          edge: true
     - stage: deploy2
       language: cpp
       os: linux
