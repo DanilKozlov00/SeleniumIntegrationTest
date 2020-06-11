@@ -1,6 +1,7 @@
-jobs:
+dist: trusty
+sudo: required
+matrix:
   include:
-    - stage: test
     - language: java
       jdk: oraclejdk11
       before_install:
@@ -51,4 +52,4 @@ jobs:
       script:
         - sudo qmake tests.pro && make
         - sudo ./tests
-    - stage: deploy
+    - stage : delpoy
