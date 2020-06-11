@@ -1,7 +1,5 @@
 language: java
 before_install: cd LR/03
-install:
-  - sudo apt-get install rar
 branches:
   only:
   - master
