@@ -81,6 +81,10 @@ matrix:
         cleanup: false
         provider: releases
         draft: true
+        tag_name: "$TRAVIS_TAG"
+          on:
+            tags: true
+          edge: true
         file:
           - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/pom.xml
     - stage: deploy2
