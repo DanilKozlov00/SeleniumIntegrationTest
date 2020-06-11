@@ -141,7 +141,6 @@ matrix:
       before_deploy:
         - git fetch --tags
         - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
-        - cd /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/src/config/testSuites.xml
       deploy:
         edge: true
         token: $GITHUB_TOKEN
