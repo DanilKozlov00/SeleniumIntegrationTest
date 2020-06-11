@@ -107,7 +107,7 @@ matrix:
         overwrite: true
         provider: releases
         file:
-          - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project.rar
+          - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/18-VTbo-1b.rar
         prerelease: true
         name: TPRO
     - stage: deploy2
