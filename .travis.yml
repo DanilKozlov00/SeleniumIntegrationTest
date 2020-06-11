@@ -31,5 +31,6 @@ deploy:
   token: $GITHUB_TOKEN
   cleanup: true
   provider: releases
+  file: /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Project.rar
   prerelease: true
   name: TPRO
