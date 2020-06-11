@@ -53,7 +53,9 @@ matrix:
         - sudo qmake tests.pro && make
         - sudo ./tests
     - stage : deploy
-      script: 
+    - language: java
+      jdk: oraclejdk11
+      script:
       before_deploy:
         - git fetch --tags
         - TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
