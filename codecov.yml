@@ -6,6 +6,7 @@ max_report_age: off
 coverage:
   precision: 2
   round: down
+
   range: "10...30"
 
   status:
