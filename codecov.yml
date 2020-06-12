@@ -1,11 +1,12 @@
 codecov:
+max_report_age: off
   notify:
     require_ci_to_pass: yes
 
 coverage:
   precision: 2
   round: down
-  range: "0...100"
+  range: "10...100"
 
   status:
     project: yes
