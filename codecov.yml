@@ -6,11 +6,11 @@ max_report_age: off
 coverage:
   precision: 2
   round: down
-  range: "10...100"
+  range: "10...20"
 
   status:
     project: yes
-    patch: off
+    patch: no
     changes: no
 
 parsers:
