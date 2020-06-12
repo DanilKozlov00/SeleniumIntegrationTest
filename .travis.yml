@@ -1,13 +1,48 @@
+language: java
 branches:
   only:
   - master
-  - dev
   - 18-VTbo-1b
-  - 18-VTbo-1a
-import:
-- source: .travis/18-VTbo-1a.yml
-  if: (((branch = issue-*)&&(head_branch = 18-VTbo-1a) ||  (branch = 18-VTbo-1a)))
-- source: .travis/18-VTbo-1b.yml
-  if: (((branch = issue-*)&&(head_branch = 18-VTbo-1b) ||  (branch = 18-VTbo-1b)))
-- source: .travis/dev.yml
-  if: ((branch = master) || (head_branch = master))
+jdk:
+- oraclejdk11
+sudo: required
+dist: trusty
+before_install: cd LR/03
+addons:
+  chrome: stable
+before_script:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+install:
+- wget -N http://chromedriver.storage.googleapis.com/2.24/chromedriver_linux64.zip
+  -P ~/
+- unzip ~/chromedriver_linux64.zip -d ~/
+- rm ~/chromedriver_linux64.zip
+- sudo mv -f ~/chromedriver /usr/local/share/
+- sudo chmod +x /usr/local/share/chromedriver
+cache:
+  directories:
+  - "$HOME/.m2"
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+
+before_deploy:
+    # Set up git user name and tag this commit
+    - git config --local user.name "YOUR GIT USER NAME"
+    - git config --local user.email "YOUR GIT USER EMAIL"
+    - export TRAVIS_TAG=v.0.0.2
+    - git tag $TRAVIS_TAG
+deploy:
+  skip_cleanup: true
+  provider: releases
+  prerelease: true
+  name: 18-VTbo-1b
+  api_key:
+    secure: 1vSiEA6SvlH8xptEZkgMSfCURkAnqjKoixlhhnCl+cUAnEtA0JDEj8KJz1ql2aD2hgS4RrBESAJjVW+XH6XahyBPZsY6+ecNhmuWpcSiRQLg5er7rJbscWCpzUwZ/vNh0zWIWgjCUHgy+Y18sSOguwBunTPdkMGEsI53ox/iaZbreVenPXH1vp2zHhN4N9QWafjX/e4JnAgwMdjD56xHEKE2RaMf1azBFhbU/ZM81cOB7K+WS6+b+8cHeX+z7dpGahOetqMKQmnu96utGYipR9+VYH7MFU0zR3TJOhMe7FcEHzFKv5HdwCohRv+ajI6ZoeEvWu58/hdA+VPS+2Iud5NK3CFJkMu8MgRrhcpEKfhceZxwRa6TMo8g/kRG6V2ePtmsJBQpQ0+D+iboGEQ3gLCJxfpdaY7EJWphRRLHWYHB2COtBb4oJPsV6UrDVVW1GwwArXHsYlORazYrESLbT2WNVUaafhxkh9QmCEenK4z4cePP00EXFeK3+i2lD+Bhv8oilj5k76hatiSQkFCybnZf/F6u8nt8jNT+IjvQ6+sTJMtS8AiwItJ9T3DeQO7FKU5wswPxCnto1GfbSwrm0O1wT+8LZynMcQ8s3Uc2vzY9+ZDOAZMvFn/Is3gGJK4p75ceLdIrb3M4+L3+Q6co/0Ehd9SckujjdT8CNirNaH0=
+  file: 
+     - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/target/Selen-0.1-jar-with-dependencies.jar
+     - /home/travis/build/DanilKozlov00/SeleniumIntegrationTest/Repository.xml     
+  on:
+    condition: $TRAVIS_COMMIT_MESSAGE == *"release"*
+
