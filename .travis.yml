@@ -25,6 +25,7 @@ cache:
   directories:
   - "$HOME/.m2"
 after_success:
+- cat codecov.yml | curl --data-binary @- https://codecov.io/validate
 - bash <(curl -s https://codecov.io/bash)
 
 before_deploy:
